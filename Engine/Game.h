@@ -51,7 +51,7 @@ private:
 	std::uniform_int_distribution<int> GDisty;
 	Snek snek;
 	Goal goal;
-	static constexpr int FramesPerMove = 3;
+	int FramesPerMove = 3;
 	int MoveCount = 0;
 
 

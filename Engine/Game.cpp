@@ -61,6 +61,22 @@ void Game::UpdateModel()
 		MoveCount = 0;
 	}
 
+	if (goal.Contador<5)
+	{
+		FramesPerMove = 5;
+	}
+	else if (goal.Contador>= 5 && goal.Contador<10)
+	{
+		FramesPerMove = 3;
+	}
+	else if (goal.Contador >= 10 && goal.Contador < 15)
+	{
+		FramesPerMove = 2;
+	}
+	else if (goal.Contador >= 15)
+	{
+		FramesPerMove = 1;
+	}
 }
 
 void Game::ComposeFrame()
