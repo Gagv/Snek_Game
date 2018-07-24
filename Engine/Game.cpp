@@ -27,8 +27,10 @@ Game::Game(MainWindow& wnd)
 	gfx(wnd),
 	tab(gfx),
 	rng(rd()),
-	RDist (0,255),
-	snek (wnd.kbd)
+	GDistx (1,tab.ancho-1),
+	GDisty(1, tab.largo-1),
+	snek (wnd.kbd),
+	goal ( GDistx(rng), GDisty(rng))
 
 {
 }
@@ -43,8 +45,17 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+	if (goal.DetectEaten(snek))
+	{
+		goal.UpdateLocation(GDistx, GDisty,rng,snek);
+		snek.Grow();
+	}
+
+
 	snek.UpdateSnake();
 	tab.Update(snek,goal);
+
+
 }
 
 void Game::ComposeFrame()

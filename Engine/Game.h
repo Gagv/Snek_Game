@@ -44,13 +44,13 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+	Tablero tab;
 	std::random_device rd;
 	std::mt19937 rng;
-	std::uniform_int_distribution<int> RDist;
-
+	std::uniform_int_distribution<int> GDistx;
+	std::uniform_int_distribution<int> GDisty;
 	Snek snek;
 	Goal goal;
-	Tablero tab;
 
 
 	/********************************/

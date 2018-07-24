@@ -46,5 +46,11 @@ void Tablero::Update(Snek& up_snek, Goal& up_goal)
 				coors[i].c = Colors::White;
 			}
 		}
+		
+		if (coors[i] == up_goal.pos)
+		{
+			coors[i].c = up_goal.pos.c;
+		}
+
 	}
 }
