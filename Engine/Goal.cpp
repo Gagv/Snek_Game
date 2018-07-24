@@ -36,8 +36,8 @@ void Goal::UpdateLocation(std::uniform_int_distribution<int> GDistx, std::unifor
 
 	while (DetectBody(snek))
 	{
-		int a = GDistx(rng);
-		int b = GDistx(rng);
+		int a = GDistx(std::random_device());
+		int b = GDisty(std::random_device());
 		pos = { a , b ,c };
 	}
 	Contador++;

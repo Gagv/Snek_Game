@@ -45,16 +45,21 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-	if (goal.DetectEaten(snek))
+	MoveCount++;
+
+	if (MoveCount >= FramesPerMove)
 	{
-		goal.UpdateLocation(GDistx, GDisty,rng,snek);
-		snek.Grow();
+		if (goal.DetectEaten(snek))
+		{
+			goal.UpdateLocation(GDistx, GDisty,rng,snek);
+			snek.Grow();
+		}
+
+
+		snek.UpdateSnake();
+		tab.Update(snek,goal);
+		MoveCount = 0;
 	}
-
-
-	snek.UpdateSnake();
-	tab.Update(snek,goal);
-
 
 }
 
