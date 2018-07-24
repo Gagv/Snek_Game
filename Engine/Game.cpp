@@ -43,7 +43,7 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-	snek.UpdateHead();
+	snek.UpdateSnake();
 	tab.Update(snek,goal);
 }
 

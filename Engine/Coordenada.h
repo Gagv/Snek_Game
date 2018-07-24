@@ -6,6 +6,7 @@ class Coordenada
 public:
 	Coordenada();
 	Coordenada(int in_x, int in_y, Color c);
+	Coordenada(int in_x, int in_y);
 	~Coordenada();
 	
 	bool operator==(const Coordenada& com) const {

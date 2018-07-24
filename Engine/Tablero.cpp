@@ -33,20 +33,13 @@ void Tablero::Update(Snek& up_snek, Goal& up_goal)
 {
 	for (int i = 0; i < celdas; i++)
 	{
-		if (coors[i] == up_snek.Head)
+		bool gotoBreakLoop = false;
+		for (int j = 0; j < up_snek.largo && !gotoBreakLoop; j++)
 		{
-			coors[i].c = up_snek.Head.c;
-		}
-		else
-		{
-			coors[i].c = Colors::White;
-		}
-
-		for (int i = 0; i < up_snek.largo; i++)
-		{
-			if (coors[i] == up_snek.segments[i].pos_seg)
+			if (coors[i] == up_snek.segments[j].pos_seg)
 			{
-				coors[i].c = up_snek.segments[i].pos_seg.c;
+				coors[i].c = up_snek.segments[j].pos_seg.c;
+				gotoBreakLoop = true;
 			}
 			else
 			{
